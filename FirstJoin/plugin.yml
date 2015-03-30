@@ -1,0 +1,18 @@
+name: FirstJoin
+main: MineBlock\FirstJoin\FirstJoin
+version: "1.0"
+api: [1.6.0]
+author: MineBlock
+description: MineBlock's Plugin
+website: http://MineBlock.zz.am
+
+commands:
+ firstjoin:
+  permission: firstjoin.cmd
+  description: FirstJoin
+  usage: /FirstJoin <Spawn|Message>
+
+permissions:
+ firstjoin.cmd:
+  default: op
+  description: FirstJoin - Command

@@ -1,0 +1,21 @@
+name: Shop
+main: MineBlock\Shop\Shop
+version: "1.1"
+api: [1.6.0]
+author: MineBlock
+description: MineBlock's Plugin
+website: http://MineBlock.zz.am
+
+commands:
+ shop:
+  permission: shop.cmd
+  description: Shop - Command
+  usage: /Shop <Add|Del|Reset>
+
+permissions:
+ shop.cmd:
+  default: op
+  description: Shop - Command
+ shop.block:
+  default: op
+  description: Shop - Block

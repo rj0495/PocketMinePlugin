@@ -1,0 +1,18 @@
+name: MaxHealth
+main: MineBlock\MaxHealth\MaxHealth
+version: "1.0"
+api: [1.6.0]
+author: MineBlock
+description: MineBlock's Plugin
+website: http://MineBlock.zz.am
+
+commands:
+ maxhealth:
+  permission: maxhealth.cmd
+  description: MaxHealth
+  usage: /MaxHealth <Set|Default>
+
+permissions:
+ maxhealth.cmd:
+  default: op
+  description: MaxHealth - Command

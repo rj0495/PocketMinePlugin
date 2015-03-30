@@ -1,0 +1,18 @@
+name: RespawnTime
+main: MineBlock\RespawnTime\RespawnTime
+version: "1.0"
+api: [1.6.0]
+author: MineBlock
+description: MineBlock's Plugin
+website: http://MineBlock.zz.am
+
+commands:
+ respawntime:
+  permission: respawntime.cmd
+  description: RespawnTime - Command
+  usage: /RespawnTime <Time>
+
+permissions:
+ respawntime.cmd:
+  default: op
+  description: RespawnTime - Command

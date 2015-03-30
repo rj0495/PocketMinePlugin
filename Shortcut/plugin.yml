@@ -1,0 +1,21 @@
+name: ShortCut
+main: MineBlock\ShortCut\ShortCut
+version: "1.0"
+api: [1.6.0]
+author: MineBlock
+description: MineBlock's Plugin
+website: http://MineBlock.zz.am
+
+commands:
+ shortcut:
+  permission: shortcut.cmd
+  description: ShortCut - Command
+  usage: /ShortCut <Add|Del|Reset|List>
+
+permissions:
+ shortcut.cmd:
+  default: op
+  description: ShortCut - Command
+ shortcut.use:
+  default: true
+  description: ShortCut - Use the shortcut

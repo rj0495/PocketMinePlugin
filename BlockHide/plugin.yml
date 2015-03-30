@@ -1,0 +1,18 @@
+name: BlockHide
+main: MineBlock\BlockHide\BlockHide
+version: "1.0"
+api: [1.6.0]
+author: MineBlock
+description: MineBlock's Plugin
+website: http://MineBlock.zz.am
+
+commands:
+ blockhide:
+  permission: blockhide.cmd
+  description: BlockHide
+  usage: /BlockHide <Start|Stop|Time>
+
+permissions:
+ blockhide.cmd:
+  default: op
+  description: BlockHide - Command

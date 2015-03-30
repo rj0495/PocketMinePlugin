@@ -1,0 +1,18 @@
+name: PlayTime
+main: MineBlock\PlayTime\PlayTime
+version: "1.0"
+api: [1.6.0]
+author: MineBlock
+description: MineBlock's Plugin
+website: http://MineBlock.zz.am
+
+commands:
+ playtime:
+  permission: playtime.cmd
+  description: PlayTime - Command
+  usage: /PlayTime <View|Rank|Clear|AllClear>
+
+permissions:
+ playtime.cmd:
+  default: op
+  description: PlayTime - Command

@@ -1,0 +1,21 @@
+name: ChatMute
+main: MineBlock\ChatMute\ChatMute
+version: "1.0"
+api: [1.6.0]
+author: MineBlock
+description: MineBlock's Plugin
+website: http://MineBlock.zz.am
+
+commands:
+ chatmute:
+  permission: chatmute.cmd
+  description: ChatMute
+  usage: /ChatMute <Mute|AllMute>
+
+permissions:
+ chatmute.cmd:
+  default: op
+  description: ChatMute - Command
+ chatmute.chat:
+  default: op
+  description: ChatMute - Chat

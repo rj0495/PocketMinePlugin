@@ -1,0 +1,18 @@
+name: NickName
+main: MineBlock\NickName\NickName
+version: "1.0"
+api: [1.6.0]
+author: MineBlock
+description: MineBlock's Plugin
+website: http://MineBlock.zz.am
+
+commands:
+ nickname:
+  permission: nickname.cmd
+  description: NickName - Command
+  usage: /NickName <PlayerName> <NickName>
+
+permissions:
+ nickname.cmd:
+  default: op
+  description: NickName - Command

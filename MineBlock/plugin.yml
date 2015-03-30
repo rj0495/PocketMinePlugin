@@ -1,0 +1,24 @@
+name: MineBlock
+main: MineBLock\MineBlock\MineBlock
+version: "1.0"
+api: [1.6.0]
+author: MineBlock
+description: MineBlock's Plugin
+website: http://MineBlock.zz.am
+
+commands:
+ mineblock:
+  permission: mineblock.cmd
+  description: MineBlock
+  usage: /Mineblock <Add|Del|Set>
+
+permissions:
+ mineblock.cmd:
+  default: op
+  description: MineBlock - Command
+ mineblock.place:
+  default: op
+  description: MineBlock - Block Place
+ mineblock.break:
+  default: true
+  description: MineBlock - Block Break

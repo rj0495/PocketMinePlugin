@@ -1,0 +1,24 @@
+name: ItemCase
+main: MineBlock\ItemCase\ItemCase
+version: "1.0"
+api: [1.6.0]
+author: MineBlock
+description: MineBlock's Plugin
+website: http://MineBlock.zz.am
+
+commands:
+ itemcase:
+  permission: itemcase.cmd
+  description: ItemCase
+  usage: /ItemCase <Add|Del|Reset|Respawn|Glass>
+
+permissions:
+ itemcase.cmd:
+  default: op
+  description: ItemCase - Command
+ itemcase.block:
+  default: op
+  description: ItemCase - Edit block
+ itemcase.spawn:
+  default: op
+  description: ItemCase - Spawn itemcase

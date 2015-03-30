@@ -1,0 +1,21 @@
+name: DamageBlock
+main: MineBlock\DamageBlock\DamageBlock
+version: "1.0"
+api: [1.6.0]
+author: MineBlock
+description: MineBlock's Plugin
+website: http://MineBlock.zz.am
+
+commands:
+ damageblock:
+  permission: damageblock.cmd
+  description: DamageBlock
+  usage: /DamageBlock <Add|Del|Reset|List>
+
+permissions:
+ damageblock.cmd:
+  default: op
+  description: DamageBlock - Command
+ damageblock.inv:
+  default: op
+  description: DamageBlock - Invincibility fo DamageBlock

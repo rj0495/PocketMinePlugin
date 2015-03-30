@@ -1,0 +1,7 @@
+name: FastBurn
+main: MineBlock\FastBurn\FastBurn
+version: "1.1"
+api: [1.6.0]
+author: MineBlock
+description: MineBlock's Plugin
+website: http://MineBlock.zz.am

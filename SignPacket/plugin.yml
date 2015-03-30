@@ -1,0 +1,7 @@
+name: SignPacket
+main: MineBlock\SignPacket\SignPacket
+version: "1.0"
+api: [1.6.0]
+author: MineBlock
+description: MineBlock's Plugin
+website: http://MineBlock.zz.am

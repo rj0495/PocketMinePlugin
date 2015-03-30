@@ -1,0 +1,18 @@
+name: DeletePlayer
+main: MineBlock\DeletePlayer\DeletePlayer
+version: "1.0"
+api: [1.6.0]
+author: MineBlock
+description: MineBlock's Plugin
+website: http://MineBlock.zz.am
+
+commands:
+ deleteplayer:
+  permission: deleteplayer.cmd
+  description: DeletePlayer
+  usage: /DeletePlayer <PlayerName>
+
+permissions:
+ deleteplayer.cmd:
+  default: op
+  description: DeletePlayer - Command

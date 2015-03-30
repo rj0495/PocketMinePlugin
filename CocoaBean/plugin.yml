@@ -1,0 +1,7 @@
+name: CocoaBean
+main: MineBlock\CocoaBean\CocoaBean
+version: "1.0"
+api: [1.6.0]
+author: MineBlock
+description: MineBlock's Plugin
+website: http://MineBlock.zz.am

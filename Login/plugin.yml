@@ -1,0 +1,32 @@
+name: Login
+main: MineBlock\Login\Login
+version: "1.0"
+api: [1.6.0]
+author: MineBlock
+description: MineBlock's Plugin
+website: http://MineBlock.zz.am
+
+commands:
+ login:
+  permission: login.cmd
+  description: Login - Login
+  usage: /Login <Password>
+ register:
+  permission: register.cmd
+  description: Login - Register
+  usage: /Register <Pasrword> <Password>
+ loginop:
+  permission: loginop.cmd
+  description: Login - LoginOP
+  usage: /LoginOP <View | UnRegister | Change> <PlayerName> 
+
+permissions:
+ login.cmd:
+  default: true
+  description: Login - Login - Command
+ register.cmd:
+  default: true
+  description: Login - Register - Command
+ loginop.cmd:
+  default: op
+  description: Login - LoginOP - Command

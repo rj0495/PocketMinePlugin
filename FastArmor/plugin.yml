@@ -1,0 +1,7 @@
+name: FastArmor
+main: MineBlock\FastArmor\FastArmor
+version: "1.0"
+api: [1.6.0]
+author: MineBlock
+description: MineBlock's Plugin
+website: http://MineBlock.zz.am

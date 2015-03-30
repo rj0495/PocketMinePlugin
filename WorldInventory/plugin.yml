@@ -1,0 +1,12 @@
+name: WorldInventory
+main: MineBlock\WorldInventory\WorldInventory
+version: "1.0"
+api: [1.6.0]
+author: MineBlock
+description: MineBlock's Plugin
+website: http://MineBlock.zz.am
+
+permissions:
+ worldinventory.change:
+  default: true
+  description: WorldInventory - Auto change the inventory

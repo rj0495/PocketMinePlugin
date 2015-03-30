@@ -1,0 +1,18 @@
+name: Cheque
+main: MineBlock\Cheque\Cheque
+version: "1.0"
+api: [1.6.0]
+author: MineBlock
+description: MineBlock's Plugin
+website: http://MineBlock.zz.am
+
+commands:
+ cheque:
+  permission: cheque.cmd
+  description: Cheque
+  usage: /Cheque <Amount>
+
+permissions:
+ cheque.cmd:
+  default: true
+  description: Cheque - Command

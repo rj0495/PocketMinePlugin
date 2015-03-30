@@ -1,0 +1,78 @@
+name: MineFarm
+main: MineBlock\MineFarm\MineFarm
+version: "1.0"
+api: [1.6.0]
+author: MineBlock
+description: MineBlock's Plugin
+website: http://MineBlock.zz.am
+
+
+commands:
+ myfarm:
+  permission: minefarm.myfarm.cmd
+  description: MineFarm
+  usage: /MyFarm <Move|Buy|Visit|Invite|Share|Kick|List|Message|Here>
+ minefarm:
+  permission: minefarm.minefarm.cmd
+  description: MineFarm
+  usage: /MineFarm <Give|Move|Here|Distance|Size|Air|Auto|Sell|Price|Item|List|Reset>
+ money:
+  permission: money.money.cmd
+  description: Money
+  usage: /Money <Me|View|Pay|Rank>
+ moneyop:
+  permission: money.moneyop.cmd
+  description: Money
+  usage: /MoneyOP <Set|Give|Take|Clear|Default|Trim|Nick|OP>
+ shop:
+  permission: shop.cmd
+  description: Shop
+  usage: /Shop <Add|Del|Reset>
+ login:
+  permission: login.cmd
+  description: Login
+  usage: /Login <Password>
+ register:
+  permission: register.cmd
+  description: Login
+  usage: /Register <Pasrword> <Password>
+ loginop:
+  permission: loginop.cmd
+  description: Login
+  usage: /LoginOP <Del|Change|Clear|Trim>
+
+permissions:
+ minefarm.myfarm.cmd:
+  default: true
+  description: MineFarm - MyFarm - Command
+ minefarm.minefarm.cmd:
+  default: op
+  description: MineFarm - MineFarm - Command
+ minefarm.move:
+  default: op
+  description: MineFarm - Move
+ minefarm.block:
+  default: op
+  description: MineFarm - Block
+ money.money.cmd:
+  default: true
+  description: Money - Money - Command
+ money.moneyop.cmd:
+  default: op
+  description: Money - MoneyOP - Command
+ shop.cmd:
+  default: op
+  description: Shop - Command
+ shop.block:
+  default: op
+  description: Shop - Block
+ login.cmd:
+  default: op
+  default: true
+  description: Login - Login - Command
+ register.cmd:
+  default: true
+  description: Login - Register - Command
+ loginop.cmd:
+  default: op
+  description: Login - LoginOP - Command

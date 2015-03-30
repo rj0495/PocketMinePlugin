@@ -1,0 +1,18 @@
+name: ViewLocation
+main: MineBlock\ViewLocation\ViewLocation
+version: 1.0
+api: [1.4.0]
+author: MineBlock
+description: MineBlock's Plugin
+website: http://MineBlock.zz.am
+
+commands:
+ viewlocation:
+  permission: viewlocation.cmd
+  description: ViewLocation
+  usage: /ViewLocation <PlayerName>
+
+permissions:
+ viewlocation.cmd:
+  default: op
+  description: ViewLocation - Command

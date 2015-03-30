@@ -1,0 +1,26 @@
+name: Money
+main: MineBlock\Money\Money
+version: "1.0"
+api: [1.6.0]
+author: MineBlock
+description: MineBlock's Plugin
+website: http://MineBlock.zz.am
+
+commands:
+ money:
+  permission: money.money.cmd
+  description: Money - Money
+  usage: /Money <Me|View|Pay|Rank>
+  
+ moneyop:
+  permission: money.moneyop.cmd
+  description: Money - MoneyOP
+  usage: /MoneyOP <Set|Give|Take|Clear|Default|Nick|OP>
+
+permissions:
+ money.money.cmd:
+  default: true
+  description: Money - Money - Command
+ money.moneyop.cmd:
+  default: op
+  description: Money - MoneyOP - Command

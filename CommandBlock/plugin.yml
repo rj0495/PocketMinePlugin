@@ -1,0 +1,27 @@
+name: CommandBlock
+main: MineBlock\CommandBlock\CommandBlock
+version: "1.0"
+api: [1.6.0]
+author: MineBlock
+description: MineBlock's Plugin
+website: http://MineBlock.zz.am
+
+commands:
+ commandblock:
+  permission: commandblock.cmd
+  description: CommandBlock
+  usage: /CommandBlock <Add|Del|Reset>
+
+permissions:
+ mineblock.commandblock.cmd:
+  default: op
+  description: CommandBlock - Command
+ mineblock.commandblock.block:
+  default: op
+  description: CommandBlock - Edit block
+ mineblock.commandblock.touch:
+  default: true
+  description: CommandBlock - Touch commandblock
+ mineblock.commandblock.push:
+  default: true
+  description: CommandBlock - Push commandblock

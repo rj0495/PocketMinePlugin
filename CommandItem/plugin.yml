@@ -1,0 +1,18 @@
+name: CommandItem
+main: MineBlock\CommandItem\CommandItem
+version: "1.0"
+api: [1.6.0]
+author: MineBlock
+description: MineBlock's Plugin
+website: http://MineBlock.zz.am
+
+commands:
+ commanditem:
+  permission: commanditem.cmd
+  description: CommandItem
+  usage: /CommandItem <Add|Del|Reset|List>
+
+permissions:
+ commanditem.cmd:
+  default: op
+  description: CommandItem - Command

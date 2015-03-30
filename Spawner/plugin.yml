@@ -1,0 +1,15 @@
+name: Spawner
+main: MineBlock\Spawner\Spawner
+version: "1.0"
+api: [1.6.0]
+author: MineBlock
+description: MineBlock's Plugin
+website: http://MineBlock.zz.am
+
+permissions:
+ spawner.add:
+  default: op
+  description: Spawner - Add Spawner
+ spawner.del:
+  default: op
+  description: Spawner - Del Spawner

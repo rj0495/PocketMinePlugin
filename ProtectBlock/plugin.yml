@@ -1,0 +1,21 @@
+name: ProtectBlock
+main: MineBlock\ProtectBlock\ProtectBlock
+version: "1.0"
+api: [1.6.0]
+author: MineBlock
+description: MineBlock's Plugin
+website: http://MineBlock.zz.am
+
+commands:
+ protectblock:
+  permission: protectblock.cmd
+  description: ProtectBlock - Command
+  usage: /ProtectBlock <Add|Del|Reset|List>
+
+permissions:
+ protectblock.cmd:
+  default: op
+  description: ProtectBlock - Command
+ protectblock.block:
+  default: op
+  description: ProtectBlock - Block

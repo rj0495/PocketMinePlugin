@@ -1,0 +1,153 @@
+<?php
+
+namespace MineBlock\ClearEntities;
+
+use pocketmine\plugin\PluginBase;
+use pocketmine\command\Command;
+use pocketmine\command\CommandSender;
+use pocketmine\utils\Config;
+use pocketmine\Player;
+use pocketmine\entity\Arrow;
+use pocketmine\entity\Item;
+use pocketmine\entity\Living;
+use pocketmine\event\Listener;
+use pocketmine\event\entity\EntitySpawnEvent;
+
+class ClearEntities extends PluginBase implements Listener{
+
+	public function onEnable(){
+		$this->getServer()->getPluginManager()->registerEvents($this, $this);
+		$this->loadYml();
+	}
+
+	public function onCommand(CommandSender $sender, Command $cmd, $label, array $sub){
+		if(!isset($sub[1])) return false;
+		$mm = "[ClearEntities] ";
+		$ik = $this->isKorean();
+		$ce = $this->ce;
+		switch(strtolower($sub[0])){
+			case "item":
+			case "i":
+			case "아이템":
+				$m = $ik ? "아이템" : "Item";
+				$set = true;
+			break;
+			case "arrow":
+			case "a":
+			case "화살":
+				$m = $ik ? "화살" : "Arrow";
+				$set = true;
+			break;
+			case "monster":
+			case "mob":
+			case "m":
+			case "몬스터":
+				$m = $ik ? "몬스터" : "Monster";
+			break;
+			default:
+				$m = "";
+			break;
+		}
+		$entities = [];
+		$w = false;
+		if(isset($sub[2])) $w = $this->getLevelByName($sub[2]);
+		foreach($this->getServer()->getLevels() as $l){
+			if($w && $w !== $l) continue;
+			foreach($l->getEntities() as $e){
+				switch($m){
+					case "Item":
+					case "아이템":
+						$m = $ik ? "아이템" : "Item";
+						if($e instanceof Item) $entities[] = $e;
+					break;
+					case "Arrow":
+					case "화살":
+						$m = $ik ? "화살" : "Arrow";
+						if($e instanceof Arrow) $entities[] = $e;
+					break;
+					case "Monster":
+					case "몬스터":
+						if($e instanceof Living && !$e instanceof Player) $entities[] = $e;
+					break;
+					default:
+						if(!$e instanceof Player) $entities[] = $e;
+					break;
+				}
+			}
+		}
+		$c = count($entities);
+		$s = !$w ? ($ik ? "이 서버" : "This server") : "\"" . $w->getFolderName() . "\" " . ($ik ? "월드에" : "world");
+		switch(strtolower($sub[1])){
+			case "view":
+			case "v":
+			case "보기":
+				$r = $mm . ($c > 0 ? ($ik ? "$s 에는 $c 개의 $m 엔티티가 있습니다." : "$s has $c $m Entities. ") : ($ik ? "$s 에는 $m 엔티티가 없습니다." : "$s don't has $m Entities."));
+			break;
+			case "clear":
+			case "c":
+			case "클리어":
+			case "초기화":
+				foreach($entities as $e)
+					$e->close();
+				$r = $mm . ($c > 0 ? ($ik ? "$s $m 엔티티를 제거했습니다. : $c" : " Clear $s $m Entities : $c") : ($ik ? "$s 에는 $m 엔티티가 없습니다." : "$s don't has $m Entities."));
+			break;
+			case "set":
+			case "s":
+			case "설정":
+				if(!isset($sub[2]) || !isset($set)){
+					$r = "[ClearEntities] Usage: /ClearEntities " . ($ik ? "<설정> <아이템|화살> <초>" : "<Set> <Item|Arrow> <Sec>");
+				}else{
+					$sub[2] = floor($sub[2]);
+					if($m == "Item" || $m == "아이템"){
+						$ce["Item"] = $sub[2] = floor($sub[2]);
+					}else{
+						$ce["Arrow"] = $sub[2] = floor($sub[2]);
+					}
+					$r = $mm . ($ik ? "$m 엔티티의 생존시간을 $sub[2] 초로 지정합니다." : "Set $m Entity's age to $sub[2] sec");
+				}
+			break;
+			default:
+				return false;
+			break;
+		}
+		if(isset($r)) $sender->sendMessage($r);
+		if($this->ce !== $ce){
+			$this->ce = $ce;
+			$this->saveYml();
+		}
+		return true;
+	}
+
+	public function onEntitySpawn(EntitySpawnEvent $event){
+		$e = $event->getEntity();
+		if($e instanceof Arrow || $e instanceof Item){
+ 			$property = (new \ReflectionClass("\\pocketmine\\entity\\".($type = ($e instanceof Item ? "Item" : "Arrow"))))->getProperty("age");
+			$property->setAccessible(true);
+			$property->setValue($e, ($e instanceof Item ? 6000 : 1200) - $this->ce[$type] * 20);
+		}
+	}
+
+	public function getLevelByName($name){
+		foreach($this->getServer()->getLevels() as $l){
+			if(strtolower($l->getFolderName()) == strtolower($name)) return $l;
+		}
+		return false;
+	}
+
+	public function loadYml(){
+		@mkdir($this->getServer()->getDataPath() . "/plugins/! MineBlock/");
+		$this->ce = (new Config($this->getServer()->getDataPath() . "/plugins/! MineBlock/" . "ClearEntities.yml", Config::YAML, ["Item" => 6000 / 20, "Arrow" => 1200 / 20]))->getAll();
+	}
+
+	public function saveYml(){
+		$ce = new Config($this->getServer()->getDataPath() . "/plugins/! MineBlock/" . "ClearEntities.yml", Config::YAML);
+		$ce->setAll($this->ce);
+		$ce->save();
+	}
+
+	public function isKorean(){
+		@mkdir($this->getServer()->getDataPath() . "/plugins/! MineBlock/");
+		if(!isset($this->ik)) $this->ik = (new Config($this->getServer()->getDataPath() . "/plugins/! MineBlock/" . "! Korean.yml", Config::YAML, ["Korean" => false]))->get("Korean");
+		return $this->ik;
+	}
+}

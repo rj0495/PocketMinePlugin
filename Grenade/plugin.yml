@@ -1,0 +1,18 @@
+name: Grenade
+main: MineBlock\Grenade\Grenade
+version: "1.0"
+api: [1.6.0]
+author: MineBlock
+description: MineBlock's Plugin
+website: http://MineBlock.zz.am
+
+commands:
+ grenade:
+  permission: grenade.cmd
+  description: Grenade
+  usage: /Grenade <Grenade|Cool>
+
+permissions:
+ grenade.cmd:
+  default: op
+  description: Grenade - Command
