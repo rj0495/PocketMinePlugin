@@ -5,3 +5,14 @@ api: [1.6.0]
 author: MineBlock
 description: MineBlock's Plugin
 website: http://MineBlock.zz.am
+
+commands:
+ antiexplosion:
+  permission: antiexplosion.cmd
+  description: AntiExplosion
+  usage: /AntiExplosion <On | Off | Protect>
+
+permissions:
+ antiexplosion.cmd:
+  default: op
+  description: AntiExplosion - Command

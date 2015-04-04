@@ -1,5 +1,5 @@
-name: AntiExplosionBreak
-main: MineBlock\AntiExplosionBreak\AntiExplosionBreak
+name: FoodHealing
+main: MineBlock\FoodHealing\FoodHealing
 version: "1.0"
 api: [1.6.0]
 author: MineBlock

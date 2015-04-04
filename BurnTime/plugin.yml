@@ -1,5 +1,5 @@
-name: AntiPvpCheat
-main: MineBlock\AntiPvpCheat\AntiPvpCheat
+name: BurnTime
+main: MineBlock\BurnTime\BurnTime
 version: "1.0"
 api: [1.6.0]
 author: MineBlock
